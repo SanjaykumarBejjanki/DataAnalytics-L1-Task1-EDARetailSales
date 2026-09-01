@@ -1,35 +1,45 @@
-# OIBSIP Data Analytics — Retail Sales EDA
+# Retail Sales Exploratory Data Analysis
 
 ## 📊 Project Overview
 
-This project performs Exploratory Data Analysis (EDA) on a retail sales dataset to understand sales performance, customer demographics, product categories, purchasing behavior, and monthly sales trends.
+This project performs Exploratory Data Analysis (EDA) on a retail sales dataset to identify sales patterns, customer characteristics, product category performance, and monthly sales trends.
 
-The project was completed as part of the **Oasis Infobyte Internship Program (OIBSIP) — Data Analytics Track, Level 1 Task 1**.
+The analysis was completed using Python, Pandas, NumPy, Matplotlib, and Seaborn in Jupyter Notebook.
 
 ## 🎯 Objectives
 
-* Understand the structure of the retail sales dataset.
-* Clean and validate the data.
-* Analyze sales performance by product category.
-* Analyze sales by gender.
-* Study monthly sales trends.
-* Analyze customer age groups.
-* Identify important business insights.
-* Create visualizations to communicate the findings.
+* Understand the structure and characteristics of the retail sales dataset.
+* Clean and prepare the data for analysis.
+* Analyze sales performance across product categories.
+* Compare sales by gender.
+* Examine customer age-group distribution.
+* Analyze monthly sales trends.
+* Identify useful patterns and business insights from the data.
+* Create visualizations to communicate the findings clearly.
 
 ## 📁 Dataset
 
-The dataset contains **1,000 retail transactions** with the following columns:
+The dataset contains **1,000 retail transactions**.
 
-* Transaction ID
-* Date
-* Customer ID
-* Gender
-* Age
-* Product Category
-* Quantity
-* Price per Unit
-* Total Amount
+### Columns
+
+| Column           | Description                   |
+| ---------------- | ----------------------------- |
+| Transaction ID   | Unique transaction identifier |
+| Date             | Date of the transaction       |
+| Customer ID      | Unique customer identifier    |
+| Gender           | Customer gender               |
+| Age              | Customer age                  |
+| Product Category | Category of purchased product |
+| Quantity         | Number of units purchased     |
+| Price per Unit   | Price of one unit             |
+| Total Amount     | Total transaction amount      |
+
+### Product Categories
+
+* Beauty
+* Clothing
+* Electronics
 
 ## 🛠️ Technologies Used
 
@@ -39,24 +49,26 @@ The dataset contains **1,000 retail transactions** with the following columns:
 * Matplotlib
 * Seaborn
 * Jupyter Notebook
-* VS Code
+* Git & GitHub
 
 ## 🔍 Data Analysis
 
-The following analyses were performed:
+### Data Quality
 
-### 1. Data Inspection
+The dataset contains **1,000 records** and no missing values were found.
 
-Checked:
+The main numerical variables include:
 
-* Dataset shape
-* Column names
-* Data types
-* Missing values
-* Duplicate records
-* Statistical summary
+* Age
+* Quantity
+* Price per Unit
+* Total Amount
 
-### 2. Product Category Analysis
+The `Date` column was converted and used for monthly sales analysis.
+
+## 📈 Exploratory Data Analysis
+
+### 1. Sales by Product Category
 
 Total sales by category:
 
@@ -66,61 +78,54 @@ Total sales by category:
 | Clothing         |    ₹155,580 |
 | Beauty           |    ₹143,515 |
 
-**Insight:** Electronics generated the highest total sales.
+**Insight:** Electronics generated the highest total sales, closely followed by Clothing. Beauty had the lowest total sales among the three categories.
 
-### 3. Gender Analysis
+### 2. Sales by Gender
 
 | Gender | Total Sales |
 | ------ | ----------: |
 | Female |    ₹232,840 |
 | Male   |    ₹223,160 |
 
-**Insight:** Female customers generated slightly higher total sales.
+**Insight:** Female customers generated slightly higher total sales than male customers.
 
-### 4. Monthly Sales Analysis
+### 3. Monthly Sales Trend
 
-The highest monthly sales were recorded in **May 2023**, with total sales of **₹53,150**.
+The analysis shows variations in sales throughout the year.
 
-### 5. Age Group Analysis
+The highest monthly sales were recorded in **May 2023**, while **September 2023** recorded the lowest sales among the main 2023 months.
 
-| Age Group | Transactions |
-| --------- | -----------: |
-| 18–25     |          169 |
-| 26–35     |          205 |
-| 36–45     |          202 |
-| 46–55     |          229 |
-| 56–64     |          195 |
+The dataset also contains transactions from **January 2024**.
 
-**Insight:** The 46–55 age group had the highest number of transactions.
+### 4. Customer Age Groups
 
-## 📈 Visualizations
+Customers were grouped into five age ranges:
 
-The project includes visualizations for:
+| Age Group | Customers |
+| --------- | --------: |
+| 18–25     |       169 |
+| 26–35     |       205 |
+| 36–45     |       202 |
+| 46–55     |       229 |
+| 56–64     |       195 |
 
-* Total Sales by Product Category
-* Total Sales by Gender
+**Insight:** The **46–55** age group contains the highest number of customers, while the **18–25** group contains the fewest.
+
+### 5. Quantity by Product Category
+
+Quantity purchased was also analyzed across product categories to understand purchasing behavior and category demand.
+
+## 📊 Visualizations
+
+The project includes the following visualizations:
+
+* Sales by Product Category
+* Sales by Gender
 * Monthly Sales Trend
-* Customer Distribution by Age Group
-* Quantity Sold by Product Category
+* Age Group Distribution
+* Quantity by Product Category
 
-The charts are available in the `outputs` folder.
-
-## 💡 Key Business Insights
-
-1. **Electronics** was the highest-revenue product category.
-2. **Beauty** generated the lowest revenue among the three categories.
-3. **Female customers** contributed slightly more total sales than male customers.
-4. **May 2023** recorded the highest monthly sales.
-5. The **46–55 age group** had the highest number of transactions.
-6. The business can improve performance by targeting high-performing customer segments and optimizing promotions for lower-performing categories.
-
-## 📌 Business Recommendations
-
-* Maintain sufficient inventory for high-performing Electronics products.
-* Use promotions and bundles to improve Beauty category sales.
-* Develop targeted marketing campaigns for the 46–55 customer segment.
-* Investigate the factors behind the strong sales performance in May.
-* Use customer demographic information to develop personalized marketing strategies.
+The generated charts are available in the `outputs/` directory.
 
 ## 📂 Project Structure
 
@@ -135,57 +140,81 @@ DataAnalytics-L1-Task1-EDARetailSales/
 │       └── retail_sales_cleaned.csv
 │
 ├── notebooks/
+│   ├── README.md
 │   └── Retail_Sales_EDA.ipynb
 │
 ├── outputs/
-│   ├── sales_by_category.png
-│   ├── sales_by_gender.png
-│   ├── monthly_sales_trend.png
 │   ├── age_group_distribution.png
-│   └── quantity_by_category.png
+│   ├── monthly_sales_trend.png
+│   ├── quantity_by_category.png
+│   ├── sales_by_category.png
+│   └── sales_by_gender.png
 │
+├── .gitignore
 └── README.md
 ```
 
-## ▶️ How to Run
+## 🚀 How to Run
 
 ### 1. Clone the repository
 
 ```bash
-git clone YOUR_GITHUB_REPOSITORY_URL
+git clone https://github.com/SanjaykumarBejjanki/DataAnalytics-L1-Task1-EDARetailSales.git
 ```
 
-### 2. Open the project folder
+### 2. Navigate to the project
 
 ```bash
 cd DataAnalytics-L1-Task1-EDARetailSales
 ```
 
-### 3. Start Jupyter Notebook
+### 3. Install required libraries
 
 ```bash
-python -m jupyter notebook
+python -m pip install pandas numpy matplotlib seaborn jupyter openpyxl
 ```
 
-### 4. Open the notebook
+### 4. Start Jupyter Notebook
 
-Navigate to:
+```bash
+jupyter notebook
+```
+
+### 5. Open the notebook
+
+Open:
 
 ```text
 notebooks/Retail_Sales_EDA.ipynb
 ```
 
-Run the notebook cells from top to bottom.
+Run the cells to reproduce the analysis.
+
+## 💡 Key Business Insights
+
+1. **Electronics** generated the highest total sales among the three product categories.
+2. **Clothing** performed very close to Electronics in total sales.
+3. **Female customers** generated slightly more revenue than male customers.
+4. The **46–55 age group** had the highest number of customers.
+5. Monthly sales varied considerably throughout the analyzed period.
+6. **May 2023** recorded the highest monthly sales in the dataset's main 2023 period.
+7. The analysis provides useful information for understanding customer demographics and product-category performance.
+
+## 📌 Conclusion
+
+The Retail Sales EDA project demonstrates how exploratory data analysis can be used to transform raw transaction data into meaningful business insights.
+
+By analyzing customer demographics, product categories, transaction quantities, and sales trends, businesses can better understand purchasing behavior and identify areas that may require further investigation.
 
 ## 👨‍💻 Author
 
-**Bejjanki Sanjay Kumar**
+**Sanjay Kumar Bejjanki**
 
-GitHub: `https://github.com/SanjaykumarBejjanki`
+GitHub:
+https://github.com/SanjaykumarBejjanki
 
-## 📜 Internship
+## 📜 Internship Task
 
-**Oasis Infobyte Internship Program (OIBSIP)**
-**Track:** Data Analytics
-**Level:** Level 1
-**Task:** Exploratory Data Analysis on Retail Sales
+**OIBSIP — Data Analytics**
+
+**Level 1 — Task 1: Exploratory Data Analysis on Retail Sales Data**
